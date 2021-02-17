@@ -14,7 +14,7 @@ deeplab
 |　　|-frozen_model.pb　　　　　　：浮動小数点の凍結された推論グラフ  
 |  
 |-src  
-|　　|-main.cpp　　　　　　　　　　：アプリのソースコード  
+|　　|-main.cpp　　　　　　　　　：アプリのソースコード  
 |  
 |-vai_c_output_custom  
 |　　|-deeplab_kernel.info　　　　：VAI_C カーネル　情報ファイル  
