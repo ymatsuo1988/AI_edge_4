@@ -7,8 +7,8 @@
 deeplab  
 |  
 |-build  
-| |-dputils.o  
-| |-main.o  
+|   |-dputils.o  
+|   |-main.o  
 |  
 |-float  
 | |-frozen_model.pb         :浮動小数点の凍結された推論グラフ  
