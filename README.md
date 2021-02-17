@@ -1,5 +1,5 @@
 # AI_edge_4
-第４回AIエッジコンテスト (team:ymym)
+第４回AIエッジコンテスト (team:ymym)　成果物
 
 # ファイルの説明
 
