@@ -22,9 +22,9 @@ deeplab
 |　　|-dpu_deeplab.elf　　　　　　：VAI_C カーネル　本体  
 |  
 |-vai_q_output  
-|　　|-deploy_model.pb　　　　　　：VAI コンパイラ用の量子化されたモデル  
+|　　|-deploy_model.pb　　　　　：VAI コンパイラ用の量子化されたモデル  
 |　　|-quantize_eval_model.pb　　：評価用の量子化されたモデル  
 |  
-|-deeplab　　　　　　　　　　　　：Makefileで生成した実行ファイル  
+|-deeplab　　　　　　　　　　　：Makefileで生成した実行ファイル  
 |  
 |-Makefile  
