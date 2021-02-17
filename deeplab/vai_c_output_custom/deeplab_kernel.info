@@ -1,0 +1,31 @@
+
+Kernel topology "deeplab_kernel_graph.jpg" for network "deeplab"
+kernel list info for network "deeplab"
+                               Kernel ID : Name
+                                       0 : deeplab
+
+                             Kernel Name : deeplab
+--------------------------------------------------------------------------------
+                             Kernel Type : DPUKernel
+                               Code Size : 0.62MB
+                              Param Size : 2.18MB
+                           Workload MACs : 5810.95MOPS
+                         IO Memory Space : 7.66MB
+                              Mean Value : 0, 0, 0, 
+                      Total Tensor Count : 55
+                Boundary Input Tensor(s)   (H*W*C)
+                              Input:0(0) : 384*384*3
+
+               Boundary Output Tensor(s)   (H*W*C)
+                   ResizeBilinear_2:0(0) : 384*384*5
+
+                        Total Node Count : 53
+                           Input Node(s)   (H*W*C)
+       MobilenetV2_Conv_conv2d_Conv2D(0) : 384*384*3
+
+                          Output Node(s)   (H*W*C)
+                     ResizeBilinear_2(0) : 384*384*5
+
+
+
+
