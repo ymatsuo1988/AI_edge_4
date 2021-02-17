@@ -209,52 +209,53 @@ void runDeeplab(DPUTask *taskDeeplab) {
 
         start = std::chrono::system_clock::now();
 
-        /*pre-process*/
-        reduce(image(roi_ave), ave_column_vec, 0, REDUCE_AVG);
-        reduce(ave_column_vec, ave_point, 1, REDUCE_AVG);
-        ave = (ave_point.data[0] + ave_point.data[1] + ave_point.data[2]) / 3;
+            /*pre-process*/
+                reduce(image(roi_ave), ave_column_vec, 0, REDUCE_AVG);
+                reduce(ave_column_vec, ave_point, 1, REDUCE_AVG);
+                ave = (ave_point.data[0] + ave_point.data[1] + ave_point.data[2]) / 3;
 
 
-        /*Infer Left image*/
-        image_L = image(roi_L);
+            /*Infer Left image*/
+                image_L = image(roi_L);
 
-        resize(image_L, image_L_resize, outsize_384, 0, 0, INTER_LINEAR);
+                resize(image_L, image_L_resize, outsize_384, 0, 0, INTER_LINEAR);
 
-        if((coeff / ave)>0){
-            image_L_resize = image_L_resize*(coeff / ave);
-        }
+                if((coeff / ave)>0){
+                    image_L_resize = image_L_resize*(coeff / ave);
+                }
 
-        dpuSetInputImage(taskDeeplab, INPUT_NODE, image_L_resize, mean);
-        dpuRunTask(taskDeeplab);
-        dpuGetOutputTensorInHWCFP32(taskDeeplab, OUTPUT_NODE, logit_L, 384*384*5);
+                dpuSetInputImage(taskDeeplab, INPUT_NODE, image_L_resize, mean);
+                dpuRunTask(taskDeeplab);
+                dpuGetOutputTensorInHWCFP32(taskDeeplab, OUTPUT_NODE, logit_L, 384*384*5);
 
-        Argmax(logit_L, result_L);
+                Argmax(logit_L, result_L);
 
-        resize(result_L,result_L_resize, outsize_1024, 0, 0, INTER_NEAREST);
-
-
-        /*Infer Right image*/
-        image_R = image(roi_R);
-
-        resize(image_R,image_R_resize, outsize_384,0,0, INTER_LINEAR);
-
-        if((coeff / ave)>0){
-            image_R_resize = image_R_resize*(coeff / ave);
-        }
-
-        dpuSetInputImage(taskDeeplab, INPUT_NODE, image_R_resize, mean);
-        dpuRunTask(taskDeeplab);
-        dpuGetOutputTensorInHWCFP32(taskDeeplab, OUTPUT_NODE, logit_R, 384*384*5);
-
-        Argmax(logit_R, result_R);
-
-        resize(result_R,result_R_resize, outsize_1024, 0, 0, INTER_NEAREST);
+                resize(result_L,result_L_resize, outsize_1024, 0, 0, INTER_NEAREST);
 
 
-        /*Merge Right, Left*/
-        result_L_resize.copyTo(result(roi_L));
-        result_R_resize(roi_R_cp_from).copyTo(result(roi_R_cp_to));
+            /*Infer Right image*/
+                image_R = image(roi_R);
 
+                resize(image_R,image_R_resize, outsize_384,0,0, INTER_LINEAR);
+
+                if((coeff / ave)>0){
+                    image_R_resize = image_R_resize*(coeff / ave);
+                }
+
+                dpuSetInputImage(taskDeeplab, INPUT_NODE, image_R_resize, mean);
+                dpuRunTask(taskDeeplab);
+                dpuGetOutputTensorInHWCFP32(taskDeeplab, OUTPUT_NODE, logit_R, 384*384*5);
+
+                Argmax(logit_R, result_R);
+
+                resize(result_R,result_R_resize, outsize_1024, 0, 0, INTER_NEAREST);
+
+
+            /*Merge Right, Left*/
+                result_L_resize.copyTo(result(roi_L));
+                result_R_resize(roi_R_cp_from).copyTo(result(roi_R_cp_to));
+
+        
         end = std::chrono::system_clock::now();
 
 //MEASURE TIME TO////////////////////////////////////////////////////////////////////////////////////////
