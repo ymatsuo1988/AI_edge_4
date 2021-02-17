@@ -25,6 +25,6 @@ deeplab
 |　　|-deploy_model.pb　　　　　　：VAI コンパイラ用の量子化されたモデル  
 |　　|-quantize_eval_model.pb　　：評価用の量子化されたモデル  
 |  
-|-deeplab　　　　　　　　　　　　　：Makefileで生成した実行ファイル  
+|-deeplab　　　　　　　　　　　　：Makefileで生成した実行ファイル  
 |  
 |-Makefile  
