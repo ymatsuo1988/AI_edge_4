@@ -18,8 +18,8 @@ deeplab
 |  
 |-vai_c_output_custom  
 |　　|-deeplab_kernel.info　　　　：VAI_C カーネル　情報ファイル  
-|　　|-deeplab_kernel_graph.gv　：VAI_C カーネル　トポロジ記述ファイル  
-|　　|-dpu_deeplab.elf　　　　　：VAI_C カーネル　本体  
+|　　|-deeplab_kernel_graph.gv　　：VAI_C カーネル　トポロジ記述ファイル  
+|　　|-dpu_deeplab.elf　　　　　　：VAI_C カーネル　本体  
 |  
 |-vai_q_output  
 |　　|-deploy_model.pb　　　　　：VAI コンパイラ用の量子化されたモデル  
