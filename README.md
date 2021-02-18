@@ -35,11 +35,11 @@ deeplab
 ↓量子化、コンパイルに使ったツール一式  
 （下記フォルダ内に上記deeplabフォルダを置いて作業、xilinx提供のツールを利用）  
 workspace  
-　　|-4_tf_quantize.sh　　　　　　　　　：量子化スクリプト(TF用)  
-　　|-6_tf_compile_for_v2.sh　　　　　　：コンパイルスクリプト(TF用)  
+　　|-4_tf_quantize.sh　　　　　　　　：量子化スクリプト(TF用)  
+　　|-6_tf_compile_for_v2.sh　　　　　：コンパイルスクリプト(TF用)  
 　　|-custom.json  
-　　|-deeplab_eval.py　　　　　　　　　：quantize_eval_model.pb評価用  
+　　|-deeplab_eval.py　　　　　　　　：quantize_eval_model.pb評価用  
 　　|-dpu-03-26-2020-13-30.dcf  
-　　|-ultra96v2_oob.hwh　　　　　　　：ハードウェア情報ファイル  
+　　|-ultra96v2_oob.hwh　　　　　　：ハードウェア情報ファイル  
     
     
