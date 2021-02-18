@@ -29,7 +29,7 @@ deeplab
 　　|-Makefile  
   
   
-↓量子化、コンパイルに使ったツール一式
+↓量子化、コンパイルに使ったツール一式  
 （下記フォルダ内に上記deeplabフォルダを置いて作業、xilinx提供のツールを利用）  
 workspace  
 　　|-4_tf_quantize.sh　　　　　：量子化スクリプト(TF用)  
