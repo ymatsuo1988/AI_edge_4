@@ -2,7 +2,10 @@
 第４回AIエッジコンテスト (team:ymym)　成果物
 
 # ファイルの説明
-
+下記は、TensorFlow(TF)で学習したモデルpbから実行ファイルを生成するまでに使ったファイル  
+xilinxのコードを参考に実装  
+https://github.com/Xilinx/Vitis-AI/tree/v1.1/Tool-Example  
+  
 ↓Vitis AIにより量子化、コンパイルしたファイル一式  
 deeplab  
 　　|  
