@@ -40,6 +40,6 @@ workspace
 　　|-custom.json  
 　　|-deeplab_eval.py　　　　　　　　：quantize_eval_model.pb評価用  
 　　|-dpu-03-26-2020-13-30.dcf  
-　　|-ultra96v2_oob.hwh　　　　　　：ハードウェア情報ファイル  
+　　|-ultra96v2_oob.hwh　　　　　　　：ハードウェア情報ファイル  
     
     
